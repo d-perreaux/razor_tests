@@ -1,0 +1,20 @@
+@page
+@model NIRValidationModel
+@{
+    ViewData["Title"] = "NIR Validation";
+}
+
+<h1>NIR Validation</h1>
+
+<form method="post">
+    <div>
+        <label>Numéro NIR:</label>
+        <input type="text" asp-for="NIR.Numero" />
+    </div>
+    <button type="submit">Valider NIR</button>
+</form>
+
+@if (Model.ValidationResult != null)
+{
+    <p>@Model.ValidationResult</p>
+}
